@@ -32,6 +32,26 @@ public class WhateverData : IWhateverData
 		}
 	}
 
+	public IEnumerable<License> GetAllUserLicenses(int id)
+	{
+		using (var connection = _context.NewDBConnection())
+		{
+			var data = connection.Query<License>("SELECT * FROM Licenses WHERE UserId =" + id).ToList();
+
+			return data;
+		}
+	}
+
+	public IEnumerable<License> GetAllLicenses()
+	{
+		using (var connection = _context.NewDBConnection())
+		{
+			var data = connection.Query<License>("SELECT * FROM Licenses").ToList();
+
+			return data;
+		}
+	}
+
 	/*public string TestMethod()
 	{
 		using(var connection = _context.NewDBConnection())

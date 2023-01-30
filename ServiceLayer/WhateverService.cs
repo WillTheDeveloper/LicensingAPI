@@ -6,6 +6,7 @@ namespace DapperAPI.ServiceLayer
 	public class WhateverService : IWhateverService
 	{
 		readonly IWhateverData _whateverData;
+		private IWhateverService _whateverServiceImplementation;
 
 		public WhateverService(IWhateverData data)
 		{
@@ -29,6 +30,16 @@ namespace DapperAPI.ServiceLayer
 		public IEnumerable<User> GetAllUsers()
 		{
 			return _whateverData.GetAllUsers();
+		}
+
+		public IEnumerable<License> GetAllUserLicenses(int id)
+		{
+			return _whateverData.GetAllUserLicenses(id);
+		}
+
+		public IEnumerable<License> GetAllLicenses()
+		{
+			return _whateverData.GetAllLicenses();
 		}
 	}
 }

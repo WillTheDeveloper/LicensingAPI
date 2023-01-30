@@ -10,6 +10,13 @@ public static class Endpoints
 		app.MapGet("/world", TestMethod2);*/
 		app.MapGet("/user/{id}", GetUser);
 		app.MapGet("/users", AllUsers);
+		app.MapGet("/user/{id}/licenses", GetUserLicenses);
+		app.MapGet("/licenses", GetAllLicenses);
+	}
+
+	private static IResult GetAllLicenses(IWhateverService service)
+	{
+		return Results.Ok(service.GetAllLicenses());
 	}
 
 	private static IResult GetUser(IWhateverService service, int id)
@@ -20,6 +27,11 @@ public static class Endpoints
 	private static IResult AllUsers(IWhateverService service)
 	{
 		return Results.Ok(service.GetAllUsers());
+	}
+
+	private static IResult GetUserLicenses(IWhateverService service, int id)
+	{
+		return Results.Ok(service.GetAllUserLicenses(id));
 	}
 
 	/*public static string TestMethod(IWhateverService service)
