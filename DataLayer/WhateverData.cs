@@ -1,7 +1,7 @@
 ﻿using Dapper;
-using LearningThisToday.Models;
+using DapperAPI.Models;
 
-namespace LearningThisToday.DataLayer;
+namespace DapperAPI.DataLayer;
 
 public class WhateverData : IWhateverData
 {
@@ -10,6 +10,16 @@ public class WhateverData : IWhateverData
 	public WhateverData(Context context)
 	{
 		_context = context;
+	}
+
+	public User GetUser(int id)
+	{
+		using (var connection = _context.NewDBConnection())
+		{
+			var data = connection.Query<User>("SELECT * FROM Users WHERE id == " + id).First();
+
+			return data;
+		}
 	}
 
 	/*public string TestMethod()

@@ -1,6 +1,6 @@
-﻿using LearningThisToday.ServiceLayer;
+﻿using DapperAPI.ServiceLayer;
 
-namespace LearningThisToday;
+namespace DapperAPI;
 
 public static class Endpoints
 {
@@ -8,6 +8,12 @@ public static class Endpoints
 	{
 		/*app.MapGet("/hello", TestMethod);
 		app.MapGet("/world", TestMethod2);*/
+		app.MapGet("/user/{id}", GetUser);
+	}
+
+	public static string GetUser(IWhateverService service, int id)
+	{
+		return service.GetUser(id);
 	}
 
 	/*public static string TestMethod(IWhateverService service)

@@ -1,6 +1,6 @@
-using LearningThisToday;
-using LearningThisToday.DataLayer;
-using LearningThisToday.ServiceLayer;
+using DapperAPI;
+using DapperAPI.DataLayer;
+using DapperAPI.ServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
-﻿using LearningThisToday.DataLayer;
-using LearningThisToday.Models;
+﻿using DapperAPI.DataLayer;
+using DapperAPI.Models;
 
-namespace LearningThisToday.ServiceLayer
+namespace DapperAPI.ServiceLayer
 {
 	public class WhateverService : IWhateverService
 	{
@@ -21,5 +21,11 @@ namespace LearningThisToday.ServiceLayer
 		{
 			return _whateverData.TestMethod2();
 		}*/
+		public string GetUser(int id)
+		{
+			var data = _whateverData.GetUser(id);
+
+			return data.FirstName;
+		}
 	}
 }

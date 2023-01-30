@@ -1,4 +1,4 @@
-﻿namespace LearningThisToday.Models;
+﻿namespace DapperAPI.Models;
 
 public class User
 {

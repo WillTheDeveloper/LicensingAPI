@@ -1,9 +1,10 @@
-﻿using LearningThisToday.Models;
+﻿using DapperAPI.Models;
 
-namespace LearningThisToday.ServiceLayer;
+namespace DapperAPI.ServiceLayer;
 
 public interface IWhateverService
 {
 	/*public string TestMethod();
 	public IEnumerable<User> TestMethod2();*/
+	string GetUser(int id);
 }
