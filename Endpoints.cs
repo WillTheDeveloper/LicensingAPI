@@ -9,11 +9,17 @@ public static class Endpoints
 		/*app.MapGet("/hello", TestMethod);
 		app.MapGet("/world", TestMethod2);*/
 		app.MapGet("/user/{id}", GetUser);
+		app.MapGet("/users", AllUsers);
 	}
 
-	public static string GetUser(IWhateverService service, int id)
+	private static IResult GetUser(IWhateverService service, int id)
 	{
-		return service.GetUser(id);
+		return Results.Ok(service.GetUser(id));
+	}
+
+	private static IResult AllUsers(IWhateverService service)
+	{
+		return Results.Ok(service.GetAllUsers());
 	}
 
 	/*public static string TestMethod(IWhateverService service)

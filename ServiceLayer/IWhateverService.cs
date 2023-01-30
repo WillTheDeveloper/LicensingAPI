@@ -6,5 +6,6 @@ public interface IWhateverService
 {
 	/*public string TestMethod();
 	public IEnumerable<User> TestMethod2();*/
-	string GetUser(int id);
+	public User GetUser(int id);
+	public IEnumerable<User> GetAllUsers();
 }

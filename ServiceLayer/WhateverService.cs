@@ -21,11 +21,14 @@ namespace DapperAPI.ServiceLayer
 		{
 			return _whateverData.TestMethod2();
 		}*/
-		public string GetUser(int id)
+		public User GetUser(int id)
 		{
-			var data = _whateverData.GetUser(id);
+			return _whateverData.GetUser(id);
+		}
 
-			return data.FirstName;
+		public IEnumerable<User> GetAllUsers()
+		{
+			return _whateverData.GetAllUsers();
 		}
 	}
 }

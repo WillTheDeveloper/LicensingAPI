@@ -16,7 +16,17 @@ public class WhateverData : IWhateverData
 	{
 		using (var connection = _context.NewDBConnection())
 		{
-			var data = connection.Query<User>("SELECT * FROM Users WHERE id == " + id).First();
+			var data = connection.Query<User>("SELECT * FROM Users WHERE id = " + id).First();
+
+			return data;
+		}
+	}
+
+	public IEnumerable<User> GetAllUsers()
+	{
+		using (var connection = _context.NewDBConnection())
+		{
+			var data = connection.Query<User>("SELECT * FROM Users").ToList();
 
 			return data;
 		}
