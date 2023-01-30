@@ -4,6 +4,6 @@ namespace LearningThisToday.ServiceLayer;
 
 public interface IWhateverService
 {
-	public string TestMethod();
-	public IEnumerable<User> TestMethod2();
+	/*public string TestMethod();
+	public IEnumerable<User> TestMethod2();*/
 }

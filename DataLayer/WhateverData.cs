@@ -12,7 +12,7 @@ public class WhateverData : IWhateverData
 		_context = context;
 	}
 
-	public string TestMethod()
+	/*public string TestMethod()
 	{
 		using(var connection = _context.NewDBConnection())
 		{
@@ -20,7 +20,7 @@ public class WhateverData : IWhateverData
 
 			var datastring = "";
 
-			data.ForEach(x => datastring += x.firstname);
+			data.ForEach(x => datastring += x.FirstName);
 
 			return datastring;
 		}
@@ -34,5 +34,5 @@ public class WhateverData : IWhateverData
 
 			return data;
 		}
-	}
+	}*/
 }

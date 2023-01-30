@@ -12,7 +12,7 @@ namespace LearningThisToday.ServiceLayer
 			_whateverData = data;
 		}
 		
-		public string TestMethod()
+		/*public string TestMethod()
 		{
 			return _whateverData.TestMethod();
 		}
@@ -20,6 +20,6 @@ namespace LearningThisToday.ServiceLayer
 		public IEnumerable<User> TestMethod2()
 		{
 			return _whateverData.TestMethod2();
-		}
+		}*/
 	}
 }
