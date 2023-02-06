@@ -1,4 +1,5 @@
 ﻿using DapperAPI.ServiceLayer;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DapperAPI;
 
@@ -12,6 +13,7 @@ public static class Endpoints
 		app.MapGet("/users", AllUsers);
 		app.MapGet("/user/{id}/licenses", GetUserLicenses);
 		app.MapGet("/licenses", GetAllLicenses);
+		app.MapPost("/user/create", CreateNewUser);
 	}
 
 	private static IResult GetAllLicenses(IWhateverService service)
@@ -32,6 +34,11 @@ public static class Endpoints
 	private static IResult GetUserLicenses(IWhateverService service, int id)
 	{
 		return Results.Ok(service.GetAllUserLicenses(id));
+	}
+
+	private static IResult CreateNewUser(IWhateverService service, string firstName, string secondName)
+	{
+		return Results.Ok(service.CreateNewUser(firstName, secondName));
 	}
 
 	/*public static string TestMethod(IWhateverService service)

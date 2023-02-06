@@ -41,5 +41,10 @@ namespace DapperAPI.ServiceLayer
 		{
 			return _whateverData.GetAllLicenses();
 		}
+
+		public User CreateNewUser(string firstName, string secondName)
+		{
+			return _whateverData.CreateNewUser(firstName, secondName);
+		}
 	}
 }

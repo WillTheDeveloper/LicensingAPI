@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using System.Data;
+using Dapper;
 using DapperAPI.Models;
 
 namespace DapperAPI.DataLayer;
@@ -49,6 +50,16 @@ public class WhateverData : IWhateverData
 			var data = connection.Query<License>("SELECT * FROM Licenses").ToList();
 
 			return data;
+		}
+	}
+
+	public User CreateNewUser(string firstName, string secondName)
+	{
+		using (var connection = _context.NewDBConnection())
+		{
+			var newuser = connection.QuerySingle<User>("pUserCreate", new { firstName = firstName, secondName = secondName }, commandType: CommandType.StoredProcedure);
+			
+			return newuser;
 		}
 	}
 
