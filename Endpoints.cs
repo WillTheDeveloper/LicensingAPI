@@ -46,14 +46,4 @@ public static class Endpoints
 	{
 		return Results.Ok(service.CreateNewLicense(licenseKey, userId, expiry));
 	}
-
-	/*public static string TestMethod(IWhateverService service)
-	{
-		return service.TestMethod();
-	}
-
-	public static IResult TestMethod2(IWhateverService service)
-	{
-		return Results.Ok(service.TestMethod2());
-	}*/
 }

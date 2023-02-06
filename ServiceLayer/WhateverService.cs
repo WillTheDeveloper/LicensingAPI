@@ -12,16 +12,6 @@ namespace DapperAPI.ServiceLayer
 		{
 			_whateverData = data;
 		}
-		
-		/*public string TestMethod()
-		{
-			return _whateverData.TestMethod();
-		}
-
-		public IEnumerable<User> TestMethod2()
-		{
-			return _whateverData.TestMethod2();
-		}*/
 		public User GetUser(int id)
 		{
 			return _whateverData.GetUser(id);
