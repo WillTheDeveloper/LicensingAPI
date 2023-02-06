@@ -63,6 +63,21 @@ public class WhateverData : IWhateverData
 		}
 	}
 
+	public License CreateNewLicense(string licenseKey, int userId, DateOnly expiry)
+	{
+		using (var connection = _context.NewDBConnection())
+		{
+			var newlicense = connection.QuerySingle<License>("pLicenseCreate");
+			
+			return newlicense;
+		}
+	}
+
+	/*public User UpdateUser(string firstName, string secondName)
+	{
+		
+	}*/
+
 	/*public string TestMethod()
 	{
 		using(var connection = _context.NewDBConnection())

@@ -14,6 +14,7 @@ public static class Endpoints
 		app.MapGet("/user/{id}/licenses", GetUserLicenses);
 		app.MapGet("/licenses", GetAllLicenses);
 		app.MapPost("/user/create", CreateNewUser);
+		app.MapPost("/license/create", CreateNewLicense);
 	}
 
 	private static IResult GetAllLicenses(IWhateverService service)
@@ -39,6 +40,11 @@ public static class Endpoints
 	private static IResult CreateNewUser(IWhateverService service, string firstName, string secondName)
 	{
 		return Results.Ok(service.CreateNewUser(firstName, secondName));
+	}
+
+	private static IResult CreateNewLicense(IWhateverService service, string licenseKey, int userId, DateOnly expiry)
+	{
+		return Results.Ok(service.CreateNewLicense(licenseKey, userId, expiry));
 	}
 
 	/*public static string TestMethod(IWhateverService service)

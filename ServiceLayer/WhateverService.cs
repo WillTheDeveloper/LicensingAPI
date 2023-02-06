@@ -46,5 +46,10 @@ namespace DapperAPI.ServiceLayer
 		{
 			return _whateverData.CreateNewUser(firstName, secondName);
 		}
+
+		public License CreateNewLicense(string licenseKey, int userId, DateOnly expiry)
+		{
+			return _whateverData.CreateNewLicense(licenseKey, userId, expiry);
+		}
 	}
 }
